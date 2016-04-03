@@ -1,0 +1,1 @@
+sudo rm -rf sites; git checkout sites; cp sites/default/default.settings.php sites/default/settings.php; cp sites/default/default.services.yml sites/default/services.yml; drush si -y --db-url=mysql://root@mysql.lan/d8 minimal;chmod -R a+w sites/default; drush en -y bartik,config_devel; cat my_settings.php >> sites/default/settings.php ;drush cdi1 block.block.breadcrumbs.yml
